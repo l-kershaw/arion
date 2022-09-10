@@ -3,6 +3,6 @@
         "gen": "ergogen k34a15.js"
     },
     "dependencies": {
-        "ergogen": "github:benvallack/ergogen#master"
+        "ergogen": "github:l-kershaw/ergogen#master"
     }
 }

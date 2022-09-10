@@ -1,5 +1,5 @@
 // Customisation
-binding = 1
+binding = 2
 ring_stagger = "0.5cy"
 middle_stagger = "0.25cy"
 index_stagger = "-0.25cy"
@@ -172,74 +172,74 @@ r_sw_shift_x = "0.5cx+19.5"
 r_sw_shift_y = "-0.75cy"
 
 fprint_list = {
-    // promicro: {
-    //     type: "promicro_pretty",
-    //     anchor: {
-    //         ref: "main_far_home",
-    //         shift: ["0.5cx+11", "0cy"],
-    //         rotate: -90
-    //     }
-    // },
-    // bat: {
-    //     type: "bat",
-    //     nets: {neg: "GND"},
-    //     anchor: {
-    //         ref: "main_far_bottom",
-    //         shift: ["0.5cx+3.5", "-0.1cy"]
-    //     }
-    // },
-    // pcm12: {
-    //     type: "pcm12",
-    //     nets: {from:"pos", to:"RAW"},
-    //     anchor: {
-    //         ref: "main_far_bottom",
-    //         shift: [p_sw_shift_x, p_sw_shift_y],
-    //         rotate: 90
-    //     },
-    //     params: {reverse: true}
-    // },
-    // via_p1: {
-    //     type: "via",
-    //     nets: {net: "pos"},
-    //     anchor: {
-    //         ref: "main_far_bottom",
-    //         shift: [p_sw_shift_x+"-5", p_sw_shift_y+"-2"]
-    //     }
-    // },
-    // via_p2: {
-    //     type: "via",
-    //     nets: {net: "RAW"},
-    //     anchor: {
-    //         ref: "main_far_bottom",
-    //         shift: [p_sw_shift_x+"-5", p_sw_shift_y+"+2"]
-    //     }
-    // },
-    // b3u1000p: {
-    //     type: "b3u1000p",
-    //     nets: {r1: "RST", r2: "GND"},
-    //     anchor: {
-    //         ref: "main_far_bottom",
-    //         shift: [r_sw_shift_x, r_sw_shift_y],
-    //         rotate: 90
-    //     },
-    //     params: {reverse: true}
-    // },
-    // via_r1: {
-    //     type: "via",
-    //     nets: {net: "GND"},
-    //     anchor: {
-    //         ref: "main_far_bottom",
-    //         shift: [r_sw_shift_x+"-5", r_sw_shift_y+"-2"]
-    //     }
-    // },
-    // via_r2: {
-    //     type: "via",
-    //     nets: {net: "RST"},
-    //     anchor: {
-    //         ref: "main_far_bottom",
-    //         shift: [r_sw_shift_x+"-5", r_sw_shift_y+"+2"]
-    //     }
-    // }
+    promicro: {
+        type: "promicro_pretty",
+        anchor: {
+            ref: "main_far_home",
+            shift: ["0.5cx+11", "0cy"],
+            rotate: -90
+        }
+    },
+    bat: {
+        type: "bat",
+        nets: {neg: "GND"},
+        anchor: {
+            ref: "main_far_bottom",
+            shift: ["0.5cx+3.5", "-0.1cy"]
+        }
+    },
+    pcm12: {
+        type: "pcm12",
+        nets: {from:"pos", to:"RAW"},
+        anchor: {
+            ref: "main_far_bottom",
+            shift: [p_sw_shift_x, p_sw_shift_y],
+            rotate: 90
+        },
+        params: {reverse: true}
+    },
+    via_p1: {
+        type: "via",
+        nets: {net: "pos"},
+        anchor: {
+            ref: "main_far_bottom",
+            shift: [p_sw_shift_x+"-5", p_sw_shift_y+"-2"]
+        }
+    },
+    via_p2: {
+        type: "via",
+        nets: {net: "RAW"},
+        anchor: {
+            ref: "main_far_bottom",
+            shift: [p_sw_shift_x+"-5", p_sw_shift_y+"+2"]
+        }
+    },
+    b3u1000p: {
+        type: "b3u1000p",
+        nets: {r1: "RST", r2: "GND"},
+        anchor: {
+            ref: "main_far_bottom",
+            shift: [r_sw_shift_x, r_sw_shift_y],
+            rotate: 90
+        },
+        params: {reverse: true}
+    },
+    via_r1: {
+        type: "via",
+        nets: {net: "GND"},
+        anchor: {
+            ref: "main_far_bottom",
+            shift: [r_sw_shift_x+"-5", r_sw_shift_y+"-2"]
+        }
+    },
+    via_r2: {
+        type: "via",
+        nets: {net: "RST"},
+        anchor: {
+            ref: "main_far_bottom",
+            shift: [r_sw_shift_x+"-5", r_sw_shift_y+"+2"]
+        }
+    }
 }
 
 
