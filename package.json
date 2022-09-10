@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "gen": "ergogen samoklava.yaml"
+        "gen": "ergogen k34a15.js"
     },
     "dependencies": {
         "ergogen": "github:soundmonster/ergogen#samoklava"
