@@ -1,5 +1,5 @@
 // Customisation
-binding = 2
+binding = 1
 ring_stagger = "0.5cy"
 middle_stagger = "0.25cy"
 index_stagger = "-0.25cy"
@@ -51,27 +51,27 @@ main_zone = {
     columns: {
         pinkie: {
             rows: {
-                bottom: {column_net: "P21"},
-                home: {column_net: "P20"},
-                top: {column_net: "P19"}
+                bottom: {column_net: "P2"},
+                home: {column_net: "P15"},
+                top: {column_net: "P7"}
             }
         },
         ring: {
             spread: "cx",
             stagger: ring_stagger,
             rows: {
-                bottom: {column_net: "P18"},
-                home: {column_net: "P15"},
-                top: {column_net: "P14"}
+                bottom: {column_net: "P3"},
+                home: {column_net: "P14"},
+                top: {column_net: "P18"}
             }
         },
         middle: {
             spread: "cx",
             stagger: middle_stagger,
             rows: {
-                bottom: {column_net: "P8"},
-                home: {column_net: "P7"},
-                top: {column_net: "P6"}
+                bottom: {column_net: "P4"},
+                home: {column_net: "P16"},
+                top: {column_net: "P19"}
             }
         },
         index: {
@@ -79,17 +79,17 @@ main_zone = {
             stagger: index_stagger,
             rows: {
                 bottom: {column_net: "P5"},
-                home: {column_net: "P4"},
-                top: {column_net: "P3"}
+                home: {column_net: "P10"},
+                top: {column_net: "P20"}
             }
         },
         far: {
             spread: "cx",
             stagger: far_stagger,
             rows: {
-                bottom: {column_net: "P2"},
+                bottom: {column_net: "P6"},
                 home: {column_net: "P1"},
-                top: {column_net: "P0"}
+                top: {column_net: "P21"}
             }
         }
     }
@@ -114,7 +114,7 @@ thumb_zone = {
     },
     columns: {
         // near: {rows: {home: {column_net : "P16"}}},
-        home: {rows: {home: {column_net : "P10"}}},
+        home: {rows: {home: {column_net : "P8"}}},
         far: {rows: {home: {column_net : "P9"}}}
     }
 }
@@ -137,7 +137,7 @@ export_list = {
         },
         {
             type: "rectangle", // Make space for controller
-            size: ["3.5cy", "2cx"], // note that dimensions switched due to rotation
+            size: ["3.8cy", "2cx"], // note that dimensions switched due to rotation
             anchor: {
                 ref: "thumb_far_home",
                 rotate: thumb_angle + "+90",
@@ -176,7 +176,7 @@ fprint_list = {
         type: "promicro_pretty",
         anchor: {
             ref: "main_far_home",
-            shift: ["0.5cx+11", "0cy"],
+            shift: ["0.5cx+12", "0.25cy"],
             rotate: -90
         }
     },
@@ -239,6 +239,50 @@ fprint_list = {
             ref: "main_far_bottom",
             shift: [r_sw_shift_x+"-5", r_sw_shift_y+"+2"]
         }
+    },
+    jlc_order: {
+        type: "text",
+        anchor: {
+            ref: "main_pinkie_home",
+            shift: [0, "0.5cy+1"]
+        },
+        params: {
+            text: "JLCJLCJLCJLC",
+            justify: "top"
+        }
+    },
+    label_f: {
+        type: "text",
+        anchor: {
+            // ref: ["main_pinkie_bottom", "thumb_home_home"]
+            // ref: "main_middle_bottom",
+            // shift: [0, "-0.8cy"]
+            ref: "main_pinkie_bottom",
+            shift: ["2cx", "-0.5cy"]
+        },
+        params: {
+            text: "k34a15 v0.1\\nby l-kershaw",
+            h_size: 2,
+            v_size: 2,
+            justify: "bottom"
+        }
+    },
+    label_b: {
+        type: "text",
+        anchor: {
+            // ref: ["main_pinkie_bottom", "thumb_home_home"]
+            // ref: "main_middle_bottom",
+            // shift: [0, "-0.8cy"]
+            ref: "main_pinkie_bottom",
+            shift: ["2cx", "-0.5cy"]
+        },
+        params: {
+            text: "k34a15 v0.1\\nby l-kershaw",
+            layer: "B.SilkS",
+            h_size: 2,
+            v_size: 2,
+            justify: "bottom mirror"
+        }
     }
 }
 
@@ -261,3 +305,4 @@ return {
         }
     }
 }
+
