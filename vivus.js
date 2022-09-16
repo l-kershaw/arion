@@ -261,7 +261,7 @@ fprint_list = {
             shift: ["2cx", "-0.5cy"]
         },
         params: {
-            text: "k34a15 v0.1\\nby l-kershaw",
+            text: "vivus v0.1\\nby l-kershaw",
             h_size: 2,
             v_size: 2,
             justify: "bottom"
@@ -277,7 +277,7 @@ fprint_list = {
             shift: ["2cx", "-0.5cy"]
         },
         params: {
-            text: "k34a15 v0.1\\nby l-kershaw",
+            text: "vivus v0.1\\nby l-kershaw",
             layer: "B.SilkS",
             h_size: 2,
             v_size: 2,

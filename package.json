@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "gen": "ergogen k34a15.js"
+        "gen": "ergogen vivus.js"
     },
     "dependencies": {
         "ergogen": "github:l-kershaw/ergogen#master"

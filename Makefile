@@ -10,7 +10,7 @@ setup:
 	npm install
 
 # outputs from 
-output/pcbs/board.kicad_pcb output/pcbs/top_plate.kicad_pcb output/pcbs/bottom_plate.kicad_pcb &: k34a15.js
+output/pcbs/board.kicad_pcb output/pcbs/top_plate.kicad_pcb output/pcbs/bottom_plate.kicad_pcb &: vivus.js
 	npm run gen
 
 output/pcbs/%.dsn: output/pcbs/%.kicad_pcb
