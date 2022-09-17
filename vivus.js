@@ -4,8 +4,8 @@ ring_stagger = "0.5cy"
 middle_stagger = "0.25cy"
 index_stagger = "-0.25cy"
 far_stagger = "-0.15cy"
-thumb_angle = 15
-thumb_dist = "4.55cx"
+thumb_angle = 10
+thumb_dist = "4.6cx"
 
 // Options for zones with keys in
 keyed_zone_opts = {
@@ -113,9 +113,9 @@ thumb_zone = {
         orient: -thumb_angle
     },
     columns: {
-        // near: {rows: {home: {column_net : "P16"}}},
+        // near: {rows: {home: {column_net : "P0"}}},
         home: {rows: {home: {column_net : "P8"}}},
-        far: {rows: {home: {column_net : "P9"}}}
+        far: {rows: {home: {column_net : "P9"}}, rotate: -10, origin: ["-0.5cx", "-0.5cy"]}
     }
 }
 
@@ -137,11 +137,19 @@ export_list = {
         },
         {
             type: "rectangle", // Make space for controller
-            size: ["3.8cy", "2cx"], // note that dimensions switched due to rotation
+            size: ["1.8cx", "3.8cy"], // note that dimensions switched due to rotation
+            anchor: {
+                ref: "main_far_bottom",
+                shift: [0, "-1.5cy"]
+            }
+        },
+        {
+            type: "rectangle",
+            operation: "intersect",
+            size: ["100cx","100cy"],
             anchor: {
                 ref: "thumb_far_home",
-                rotate: thumb_angle + "+90",
-                shift: ["0.5cx+" + binding, "0.5cy+" + binding]
+                shift: ["-99.5cx+"+binding, "-50cy"]
             }
         }
    ],
