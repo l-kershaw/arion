@@ -1,5 +1,5 @@
 // Customisation
-binding = 1
+binding = 2
 ring_stagger = "0.5cy"
 middle_stagger = "0.25cy"
 index_stagger = "-0.25cy"
