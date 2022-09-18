@@ -1,5 +1,5 @@
 // Customisation
-binding = 2
+binding = 1
 ring_stagger = "0.5cy"
 middle_stagger = "0.25cy"
 index_stagger = "-0.25cy"
@@ -48,7 +48,7 @@ main_zone = {
             rows: {
                 bottom: {column_net: "P3"},
                 home: {column_net: "P14"},
-                top: {column_net: "P18"}
+                top: {column_net: "P18", tags: {sharp: true}}
             }
         },
         middle: {
@@ -57,7 +57,7 @@ main_zone = {
             rows: {
                 bottom: {column_net: "P4"},
                 home: {column_net: "P16"},
-                top: {column_net: "P19"}
+                top: {column_net: "P19", tags: {sharp: true}}
             }
         },
         index: {
@@ -66,7 +66,7 @@ main_zone = {
             rows: {
                 bottom: {column_net: "P5"},
                 home: {column_net: "P10"},
-                top: {column_net: "P20"}
+                top: {column_net: "P20", tags: {sharp: true}}
             }
         },
         far: {
@@ -75,7 +75,7 @@ main_zone = {
             rows: {
                 bottom: {column_net: "P6"},
                 home: {column_net: "P1"},
-                top: {column_net: "P21"}
+                top: {column_net: "P21", tags: {sharp: true}}
             }
         }
     }
@@ -101,7 +101,11 @@ thumb_zone = {
     columns: {
         // near: {rows: {home: {column_net : "P0"}}},
         home: {rows: {home: {column_net : "P8"}}},
-        far: {rows: {home: {column_net : "P9"}}, rotate: -10, origin: ["-0.5cx", "-0.5cy"]}
+        far: {
+            rows: {home: {column_net : "P9", tags: {sharp: true}}},
+            rotate: -10,
+            origin: ["-0.5cx", "-0.5cy"]
+        }
     }
 }
 
@@ -123,10 +127,10 @@ export_list = {
         },
         {
             type: "rectangle", // Make space for controller
-            size: ["1.8cx", "3.8cy"], // note that dimensions switched due to rotation
+            size: ["1.8cx", "2.3cy"],
             anchor: {
                 ref: "main_far_bottom",
-                shift: [0, "-1.5cy"]
+                shift: [0, 0]
             }
         },
         {
@@ -138,16 +142,36 @@ export_list = {
                 shift: ["-99.5cx+"+binding, "-50cy"]
             }
         }
-   ],
+    ],
     cutouta: [{
         type: "outline",
         name: "raw",
-        fillet: 1
+        fillet: 1.5
     }],
+    raw2: [
+        {
+            type: "outline",
+            name: "cutouta"
+        },
+        {
+            type: "rectangle", // Make space for controller
+            size: ["1.8cx", "2.3cy"],
+            anchor: {
+                ref: "main_far_bottom",
+                shift: [0, "-1.5cy"]
+            }
+        },
+        {
+            type: "keys",
+            tags: ["sharp"],
+            side: "left",
+            size: ["1cx","1cy"]
+        }
+    ],
     cutout: [{
         type: "outline",
-        name: "cutouta",
-        fillet: 0.5
+        name: "raw2",
+        fillet: 1
     }],
     keycap_outlines: [{
         type: "keys",
@@ -159,10 +183,10 @@ export_list = {
 }
 
 // Power switch shift
-p_sw_shift_x = "0.5cx+19.5"
+p_sw_shift_x = "0.5cx+21"
 p_sw_shift_y = "-0.2cy"
 // Reset switch shift
-r_sw_shift_x = "0.5cx+19.5"
+r_sw_shift_x = "0.5cx+21"
 r_sw_shift_y = "-0.75cy"
 
 fprint_list = {
