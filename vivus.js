@@ -14,27 +14,13 @@ keyed_zone_opts = {
     bind: binding,
     footprints: {
         choc_hotswap: {
-            type: "choc",
+            type: "choc_custom",
             nets: {
                 from: "=column_net",
                 to: "GND"
             },
             params: {
-                keycaps: true,
-                reverse: true,
-                hotswap: true
-            }
-        },
-        choc: {
-            type: "choc",
-            anchor: {rotate: 180},
-            nets: {
-                from: "=column_net",
-                to: "GND"
-            },
-            params: {
-                keycaps: true,
-                reverse: true
+                keycaps: true
             }
         }
     }
