@@ -42,6 +42,11 @@ jobs:
       #   with:
       #     pcb_file: output/pcbs/bottom_plate.kicad_pcb
       #     gerbers_dir: output/gerbers/bottom_plate
+      - name: Export Images for main PCB
+        uses: ./.github/actions/export-images
+        with:
+          pcb_file: output/pcbs/board.kicad_pcb
+          image_dir: output/images/board
       - name: Export Gerbers for main PCB
         uses: ./.github/actions/export-gerbers
         with:
