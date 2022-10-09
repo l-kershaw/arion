@@ -43,8 +43,10 @@ main_zone = {
             }
         },
         ring: {
-            spread: "cx",
-            stagger: ring_stagger,
+            key: {
+                spread: "cx",
+                stagger: ring_stagger
+            },
             rows: {
                 bottom: {column_net: "P3"},
                 home: {column_net: "P14"},
@@ -52,8 +54,10 @@ main_zone = {
             }
         },
         middle: {
-            spread: "cx",
-            stagger: middle_stagger,
+            key: {
+                spread: "cx",
+                stagger: middle_stagger
+            },
             rows: {
                 bottom: {column_net: "P4"},
                 home: {column_net: "P16"},
@@ -61,8 +65,10 @@ main_zone = {
             }
         },
         index: {
-            spread: "cx",
-            stagger: index_stagger,
+            key: {
+                spread: "cx",
+                stagger: index_stagger
+            },
             rows: {
                 bottom: {column_net: "P5"},
                 home: {column_net: "P10"},
@@ -70,8 +76,10 @@ main_zone = {
             }
         },
         far: {
-            spread: "cx",
-            stagger: far_stagger,
+            key: {
+                spread: "cx",
+                stagger: far_stagger
+            },
             rows: {
                 bottom: {column_net: "P6"},
                 home: {column_net: "P1"},
@@ -102,9 +110,19 @@ thumb_zone = {
         // near: {rows: {home: {column_net : "P0"}}},
         home: {rows: {home: {column_net : "P8"}}},
         far: {
-            rows: {home: {column_net : "P9", tags: {sharp: true}}},
-            rotate: -10,
-            origin: ["-0.5cx", "-0.5cy"]
+            key:{
+                splay: -10,
+                // rotate: -10,
+                origin: ["-0.5cx", "-0.5cy"]
+                // origin: ["5cx", "5cy"]
+            },
+            rows: {home: {
+                // rotate: -10,
+                // splay: -10,
+                // origin: ["-0.5cx", "-0.5cy"],
+                column_net : "P9",
+                tags: {sharp: true}
+            }},
         }
     }
 }
@@ -112,71 +130,72 @@ thumb_zone = {
 export_list = {
     raw: [
         {
-            type: "keys",
-            side: "left",
-            tags: ["keyed"],
-            size: ["1cx", "1cy"]
+            what: "rectangle",
+            where: ["meta.tags ~ /keyed/"],
+            size: ["1cx", "1cy"],
+            bound: true
         },
         {
-            type: "rectangle",
+            what: "rectangle",
             size: [thumb_dist + "+0.5cx+" + binding, "2cy+" + binding],
-            anchor: {
+            where: {
                 ref: "thumb_home_home",
-                shift: ["-" + thumb_dist + "-" + binding, "-0.5cy-" + binding]
+                shift: ["-("+thumb_dist+"-0.5cx+"+binding+")/2", "(1cy-"+binding+")/2"]
             }
         },
         {
-            type: "rectangle", // Make space for controller
+            what: "rectangle", // Make space for controller
             size: ["1.8cx", "2.3cy"],
-            anchor: {
+            where: {
                 ref: "main_far_bottom",
-                shift: [0, 0]
+                shift: ["0.9cx", "1.15cy"]
             }
         },
         {
-            type: "rectangle",
+            what: "rectangle",
             operation: "intersect",
             size: ["100cx","100cy"],
-            anchor: {
+            where: {
                 ref: "thumb_far_home",
-                shift: ["-99.5cx+"+binding, "-50cy"]
+                shift: ["-49.5cx+"+binding, "-0cy"]
             }
         }
     ],
     cutouta: [{
-        type: "outline",
+        what: "outline",
         name: "raw",
         fillet: 1.5
     }],
     raw2: [
         {
-            type: "outline",
+            what: "outline",
             name: "cutouta"
         },
         {
-            type: "rectangle", // Make space for controller
+            what: "rectangle", // Make space for controller
             size: ["1.8cx", "2.3cy"],
-            anchor: {
+            where: {
                 ref: "main_far_bottom",
-                shift: [0, "-1.5cy"]
+                shift: ["0.9cx", "-0.1cy"]
             }
         },
         {
-            type: "keys",
-            tags: ["sharp"],
-            side: "left",
-            size: ["1cx","1cy"]
+            what: "rectangle",
+            where: "meta.tags ~ sharp",
+            // side: "left",
+            size: ["1cx","1cy"],
+            bound: true
         }
     ],
     cutout: [{
-        type: "outline",
+        what: "outline",
         name: "raw2",
         fillet: 1
     }],
     keycap_outlines: [{
-        type: "keys",
-        tags: ["keyed"],
-        side: "left",
+        what: "rectangle",
+        where: ["meta.tags ~ /keyed/"],
+        // side: "left",
         size: ["1cx-0.5", "1cy-0.5"], // Choc keycaps are 17.5 x 16.5
         bound: false
     }]
@@ -313,9 +332,10 @@ return {
             thumb: thumb_zone
         }
     },
-    outlines: {
-        exports: export_list
-    },
+    // outlines: {
+    //     exports: export_list
+    // },
+    outlines: export_list,
     pcbs: {
         board: {
             outlines: {main: {outline: "cutout"}},

@@ -3,6 +3,6 @@
         "gen": "ergogen vivus.js"
     },
     "dependencies": {
-        "ergogen": "github:l-kershaw/ergogen#master"
+        "ergogen": "github:l-kershaw/ergogen#develop"
     }
 }
