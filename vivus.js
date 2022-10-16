@@ -113,8 +113,9 @@ thumb_zone = {
             key:{
                 splay: -10,
                 // rotate: -10,
-                origin: ["-0.5cx", "-0.5cy"]
+                origin: ["-0.5cx", "-0.5cy"],
                 // origin: ["5cx", "5cy"]
+                bind: [1,1,1,5]
             },
             rows: {home: {
                 // rotate: -10,
@@ -218,11 +219,12 @@ fprint_list = {
         }
     },
     bat: {
-        type: "bat",
+        type: "bat_custom",
         nets: {neg: "GND"},
         anchor: {
             ref: "main_far_bottom",
-            shift: ["0.5cx+3.5", "-0.1cy"]
+            shift: ["0.5cx+12", 0],
+            rotate: -90
         }
     },
     pcm12: {
