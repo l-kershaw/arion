@@ -242,7 +242,7 @@ fprint_list = {
         nets: {net: "pos"},
         anchor: {
             ref: "main_far_bottom",
-            shift: [p_sw_shift_x+"-5", p_sw_shift_y+"-2"]
+            shift: [p_sw_shift_x+"-3", p_sw_shift_y+"-2"]
         }
     },
     via_p2: {
@@ -250,7 +250,7 @@ fprint_list = {
         nets: {net: "RAW"},
         anchor: {
             ref: "main_far_bottom",
-            shift: [p_sw_shift_x+"-5", p_sw_shift_y+"+2"]
+            shift: [p_sw_shift_x+"-3", p_sw_shift_y+"+2"]
         }
     },
     b3u1000p: {
@@ -268,7 +268,7 @@ fprint_list = {
         nets: {net: "GND"},
         anchor: {
             ref: "main_far_bottom",
-            shift: [r_sw_shift_x+"-5", r_sw_shift_y+"-2"]
+            shift: [r_sw_shift_x+"-3", r_sw_shift_y+"-2"]
         }
     },
     via_r2: {
@@ -276,7 +276,7 @@ fprint_list = {
         nets: {net: "RST"},
         anchor: {
             ref: "main_far_bottom",
-            shift: [r_sw_shift_x+"-5", r_sw_shift_y+"+2"]
+            shift: [r_sw_shift_x+"-3", r_sw_shift_y+"+2"]
         }
     },
     jlc_order: {
