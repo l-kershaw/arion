@@ -111,7 +111,7 @@ thumb_zone = {
         home: {rows: {home: {column_net : "P8"}}},
         far: {
             key:{
-                splay: -10,
+                // splay: -10,
                 // rotate: -10,
                 origin: ["-0.5cx", "-0.5cy"],
                 // origin: ["5cx", "5cy"]
@@ -211,7 +211,7 @@ r_sw_shift_y = "-0.75cy"
 
 fprint_list = {
     promicro: {
-        type: "promicro_pretty",
+        type: "promicro_custom",
         anchor: {
             ref: "main_far_home",
             shift: ["0.5cx+12", "0.25cy"],
@@ -253,7 +253,7 @@ fprint_list = {
             shift: [p_sw_shift_x+"-3", p_sw_shift_y+"+2"]
         }
     },
-    b3u1000p: {
+    reset: {
         type: "b3u1000p",
         nets: {r1: "RST", r2: "GND"},
         anchor: {
